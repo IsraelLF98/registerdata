@@ -1,4 +1,4 @@
 # registerdata
 REPOSITORIO PARA EL PROYECTO 
 ALUMNOS DE 7MO SEMESTRE UTC SISTEMAS DE INFORMACIÓN
-Lenin Israel Flores Betancourt
+Lenin Flores
