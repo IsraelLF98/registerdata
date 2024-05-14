@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Insertar producto</h1>
-    <form action="INSERT">
+    <form id="form-product">
         <input type="text" id="nombre" placeholder="INSERTA EL NOMBRE DEL PRODUCTO">
         <input type="text" id="precio" placeholder="INSERTA EL PRECIO DEL PRODUCTO">
         <input type="text" id="descripcion" placeholder="INSERTA LA DESCRIPCIÓN DEL PRODUCTO">
@@ -34,6 +34,20 @@
       
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        //variables 
+        //insercción
+        const productform = document.getElementById("form-product");
+        productform.addEventListener("submit", async(e)=>{ //enventos (async es de caracter asincrono)
+            e.preventDefault();
+            await addDoc(collection(db,"productos"),{
+                nombre: productform.nombre.value,
+                precio: productform.precio.value,
+                descripcion: productform.descripcion.value
+            });
+            productform.reset();
+        }); 
         </script>
     <!--FIN CONEXIÓN DE LA BASE DE DATOS DE FAREBASE-->
 </body>
